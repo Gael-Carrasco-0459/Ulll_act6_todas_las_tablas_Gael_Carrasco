@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}Agregar Proveedor{% endblock %}
+
+{% block content %}
+<div class="card p-4">
+    <h2 class="card-title text-center mb-4">Agregar Nuevo Proveedor</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="id_prov" class="form-label">ID Proveedor:</label>
+            <input type="number" class="form-control" id="id_prov" name="id_prov" required>
+        </div>
+        <div class="mb-3">
+            <label for="nom_prov" class="form-label">Nombre del Proveedor:</label>
+            <input type="text" class="form-control" id="nom_prov" name="nom_prov" required>
+        </div>
+        <div class="mb-3">
+            <label for="contacto_prov" class="form-label">Contacto:</label>
+            <input type="text" class="form-control" id="contacto_prov" name="contacto_prov" required>
+        </div>
+        <div class="mb-3">
+            <label for="tel_prov" class="form-label">Teléfono:</label>
+            <input type="tel" class="form-control" id="tel_prov" name="tel_prov" required>
+        </div>
+        <div class="mb-3">
+            <label for="C_E_prov" class="form-label">Correo Electrónico:</label>
+            <input type="email" class="form-control" id="C_E_prov" name="C_E_prov" required>
+        </div>
+        <div class="mb-3">
+            <label for="direc_prov" class="form-label">Dirección:</label>
+            <textarea class="form-control" id="direc_prov" name="direc_prov" rows="3" required></textarea>
+        </div>
+        <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-primary">Guardar Proveedor</button>
+            <a href="{% url 'ver_proveedores' %}" class="btn btn-secondary">Cancelar</a>
+        </div>
+    </form>
+</div>
+{% endblock %}
